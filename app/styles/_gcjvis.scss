@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+$mainFont: 'Droid_Sans', sans-serif;
+$mainFontSerif: 'Droid_Ser', serif;
+
+@font-face {
+  font-family: "Droid_Sans";
+  src: url('fonts/DroidSans.ttf');
+}
+
+@font-face {
+  font-family: "Droid_Ser";
+  src: url('fonts/DroidSerif.ttf');
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+.gcjVis {
+
+  .title {
+    font-family: $mainFont;
+  }
+
+}
