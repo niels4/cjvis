@@ -2,6 +2,7 @@
 
 $mainFont: 'Droid_Sans', sans-serif;
 $mainFontSerif: 'Droid_Ser', serif;
+$titleSubFont: 'Lemon', serif;
 
 @font-face {
   font-family: "Droid_Sans";
@@ -13,6 +14,11 @@ $mainFontSerif: 'Droid_Ser', serif;
   src: url('fonts/DroidSerif.ttf');
 }
 
+@font-face {
+  font-family: "Lemon";
+  src: url('fonts/Lemon-Regular.ttf');
+}
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -22,10 +28,66 @@ html {
   height: 100%;
 }
 
-.gcjVis {
+div.container {
+  margin: 15px;
+  position: relative;
+  min-width: 400px;
+}
 
-  .title {
-    font-family: $mainFont;
+.gcjvis {
+  font-family: $mainFont;
+
+
+  .header {
+    position: relative;
   }
 
+  .problemName {
+    font-size: 2em;
+    position: absolute;
+    left: 40%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+  }
+
+ .title {
+   display: inline-block;
+   width: 40%;
+
+    h1 {
+        margin: 0;
+    }
+  
+    div {
+      position: relative;
+      left: 2em;
+      color: #FFF;
+      font-family: $titleSubFont;
+      background-color: purple;
+      display: inline-block;
+      padding: .24em .3em .25em .35em;
+      width: 7.2em;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: titleIn 2.25s linear;
+    }
+  }
+
+  .verticalSlider {
+    position: relative;
+    top: 25ex;
+  }
+}
+
+@keyframes titleIn {
+  from {
+    width: 0;
+  }
+  
+  to {
+    width: 7.2em;
+  }
 }
