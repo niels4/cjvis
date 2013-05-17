@@ -3,11 +3,11 @@
 angular.module('gcjvisApp')
   .controller('MainCtrl', ['$scope', function ($scope) {
     $scope.snappers = 1;
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.snaps = 0;
+
+    $scope.incSnaps = function () {
+      $scope.snaps++;
+    };
   }]);
 
 angular.module('gcjvisApp')
@@ -18,24 +18,41 @@ angular.module('gcjvisApp')
       },
       link: function (scope, element, attrs) {
         var $el = $(element);
-        console.log("val:", attrs.value);
+        var orientation = attrs.orientation || "horizontal";
+        var reverseAdjustVal, startVal;
+        if (attrs.reversed) {
+          reverseAdjustVal = 1 + Number(attrs.max);
+          startVal = attrs.max;
+        } else {
+          startVal = attrs.min;
+        }
+
         scope.$watch("value", function (newVal, oldVal) {
-          var adjustedNewVal = 31 - newVal;
-          console.log("sliderVal", $el.val());
+          var adjustedNewVal;
+          console.log("new val:", newVal);
+          if (attrs.reversed) {
+            adjustedNewVal = reverseAdjustVal - newVal;
+          } else {
+            adjustedNewVal = Number(newVal);
+          }
           if (adjustedNewVal !== $el.val()) {
             $el.val(adjustedNewVal);
           }
         });
 
         $el.noUiSlider({
-            range: [1, 30],
-            start: 30,
+            range: [attrs.min, attrs.max],
+            start: startVal,
             handles: 1,
             step: 1,
-            orientation: "vertical",
+            orientation: attrs.orientation,
             slide: function () {
               scope.$apply(function () {
-                scope.value = 31 - $el.val();
+                if (attrs.reversed) {
+                  scope.value = reverseAdjustVal - $el.val();
+                } else {
+                  scope.value = $el.val();
+                }
               });
             }
           });

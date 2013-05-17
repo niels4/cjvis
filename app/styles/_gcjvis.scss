@@ -103,12 +103,26 @@ div.container {
     }
   }
 
-  .verticalSlider {
+  .snappersSlider {
     position: absolute;
     top: 3ex;
-    bottom: 0;
+    bottom: 3ex;
     left: 0;
     height: auto;
+  }
+
+  .snapsSlider {
+    position: absolute;
+    right: 5em;
+    bottom: 0;
+    left: 1.6em;
+    width: auto;
+  }
+
+  .snapButton {
+    position: absolute;
+    right: .5em;
+    bottom: -1ex;
   }
 
   .snapperDisplay {
@@ -116,7 +130,7 @@ div.container {
     position: absolute;
     top: 3ex;
     right: 0;
-    bottom: 0;
+    bottom: 1.2em;
     left: 1em;
     height: auto;
   }

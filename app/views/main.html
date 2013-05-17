@@ -8,8 +8,10 @@
 <div class="contentSection">
   <div class="textInputs">
     Snappers:<input type="text" name="snappers" size="2" ng-model="snappers">
-    Snaps:<input type="text" name="snaps" size="3" value="">
+    Snaps:<input type="text" name="snaps" size="3" ng-model="snaps">
   </div>
-  <div slider value="snappers" class="noUiSlider verticalSlider"></div>
+  <div slider reversed="true" min="1" max="30" orientation="vertical" value="snappers" class="noUiSlider snappersSlider"></div>
   <div class="snapperDisplay"></div>
+  <div slider min="0" max="50" value="snaps" class="noUiSlider snapsSlider"></div>
+  <input type="button" class="snapButton" ng-click="incSnaps()" value="Snap!">
 </div>
