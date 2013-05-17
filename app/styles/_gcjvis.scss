@@ -3,6 +3,7 @@
 $mainFont: 'Droid_Sans', sans-serif;
 $mainFontSerif: 'Droid_Ser', serif;
 $titleSubFont: 'Lemon', serif;
+$borderColor: #C3D9FF;
 
 @font-face {
   font-family: "Droid_Sans";
@@ -28,18 +29,24 @@ html {
   height: 100%;
 }
 
+body {
+  padding: 15px;
+  height: 100%;
+}
+
 div.container {
-  margin: 15px;
   position: relative;
   min-width: 400px;
+  height: 100%;
 }
 
 .gcjvis {
   font-family: $mainFont;
 
 
-  .header {
+  .headerSection {
     position: relative;
+    height: 8ex;
   }
 
   .problemName {
@@ -76,9 +83,42 @@ div.container {
     }
   }
 
-  .verticalSlider {
+  .contentSection {
+    position: absolute;
+    top: 8ex;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .textInputs {
+    text-align: center;
+    font-size: 1.2em;
+    margin-left: 2em;
+    height: 3ex;
     position: relative;
-    top: 25ex;
+    top: -.25em;
+    input:first-of-type {
+      margin-right: 2em;
+    }
+  }
+
+  .verticalSlider {
+    position: absolute;
+    top: 3ex;
+    bottom: 0;
+    left: 0;
+    height: auto;
+  }
+
+  .snapperDisplay {
+    border: .5em solid $borderColor;
+    position: absolute;
+    top: 3ex;
+    right: 0;
+    bottom: 0;
+    left: 1em;
+    height: auto;
   }
 }
 

@@ -1,8 +1,15 @@
-<div class="header">
+<div class="headerSection">
   <div class="title">
     <h1>Code Jam</h1>
     <div>VISUALIZED</div>
   </div>
   <div class="problemName">Snapper Chain</div>
 </div>
-<div slider class="noUiSlider verticalSlider"></div>
+<div class="contentSection">
+  <div class="textInputs">
+    Snappers:<input type="text" name="snappers" size="2" ng-model="snappers">
+    Snaps:<input type="text" name="snaps" size="3" value="">
+  </div>
+  <div slider value="snappers" class="noUiSlider verticalSlider"></div>
+  <div class="snapperDisplay"></div>
+</div>
