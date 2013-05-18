@@ -10,8 +10,10 @@
     Snappers:<input type="text" name="snappers" size="2" ng-model="snappers">
     Snaps:<input type="text" name="snaps" size="3" ng-model="snaps">
   </div>
-  <div slider reversed="true" min="1" max="30" orientation="vertical" value="snappers" class="noUiSlider snappersSlider"></div>
+  <div slider label="S n a p p e r s" reversed="true" min="1" max="30" orientation="vertical" value="snappers" class="noUiSlider snappersSlider">
+  </div>
   <div class="snapperDisplay"></div>
-  <div slider min="0" max="50" value="snaps" class="noUiSlider snapsSlider"></div>
+  <div slider label="Snaps" min="0" max="maxSnaps" value="snaps" class="noUiSlider snapsSlider">
+  </div>
   <input type="button" class="snapButton" ng-click="incSnaps()" value="Snap!">
 </div>
