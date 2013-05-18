@@ -4,8 +4,8 @@ angular.module('gcjvisApp', [])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'views/main.html',
-    controller: 'MainCtrl'
+    templateUrl: 'views/snapper_chain.html',
+    controller: 'SnapperChainCtrl'
   })
   .otherwise({
     redirectTo: '/'
