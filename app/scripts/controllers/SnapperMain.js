@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('gcjvisApp')
-  .controller('SnapperChainCtrl', ['$scope', function ($scope) {
-    var findMaxSnaps = function (snappers) {
-      return 4 * snappers - 2; // 2 * (2 * (snappers - 1) + 1)
-    };
+  .controller('SnapperMainCtrl', ['$scope', function ($scope) {
+    var findMaxSnaps = _.memoize(function (snappers) {
+      return snappers <= 1 ? 1 : findMaxSnaps(snappers - 1) * 2 + 1;
+    });
 
     $scope.snappers = 1;
     $scope.snaps = 0;
@@ -14,7 +14,7 @@ angular.module('gcjvisApp')
       if (newVal.length === 0) { return; }
       var newValNum = parseInt(newVal, 10);
       if (isNaN(newValNum) || String(newValNum).length !== String(newVal).length ||
-          newValNum < 1 || newValNum > 30) {
+          newValNum < 1 || newValNum > 15) {
         $scope.snappers = oldVal;
       }
 

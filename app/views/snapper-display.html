@@ -1,8 +1,8 @@
-<span class="snapper-plug">PLUG</span>
+<span class="snapper-plug" ng-click="testChange()">PLUG</span>
 <span class="snapper" ng-repeat="snapper in snapperList">
   <ul>
-    <li>{{snapper.switch}}</li>
-    <li>{{snapper.power}}</li>
+    <li>{{snapper.isOn}}</li>
+    <li>{{snapper.isPowered}}</li>
   </ul>
 </span>
-<span class="snapper-light">LIGHT</span>
+<span class="snapper-light">LIGHT: {{lightOn}}</span>

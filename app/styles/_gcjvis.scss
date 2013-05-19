@@ -137,16 +137,6 @@ div.container {
     }
   }
 
-  .snapperDisplay {
-    border: .5em solid $borderColor;
-    position: absolute;
-    top: 3ex;
-    right: 0;
-    bottom: 3.9ex;
-    left: 2.5em;
-    height: auto;
-  }
-
   .snapsSlider {
     margin-bottom: 2ex;
     position: absolute;
@@ -187,6 +177,13 @@ div.container {
   }
 
   .snapperDisplay {
+    border: .5em solid $borderColor;
+    position: absolute;
+    top: 3ex;
+    right: 0;
+    bottom: 3.9ex;
+    left: 2.5em;
+    height: auto;
     span {
       margin: 3px;
       display: inline-block;
