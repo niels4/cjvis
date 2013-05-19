@@ -186,6 +186,29 @@ div.container {
     bottom: -.5ex;
   }
 
+  .snapperDisplay {
+    span {
+      margin: 3px;
+      display: inline-block;
+    }
+  }
+
+  .snapper-plug {
+    border: 3px solid brown;
+  }
+
+  .snapper-light {
+    border: 3px solid yellow;
+  }
+
+  .snapper {
+    border: 3px solid green;
+    ul {
+      list-style-type: none;
+      padding: 3px 20px;
+      margin: 0;
+    }
+  }
 }
 
 @keyframes titleIn {
