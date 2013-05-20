@@ -1,6 +1,6 @@
 <span class="snapper-plug" ng-click="testChange()"></span>
 <span class="snapper isPowered-{{snapper.isPowered}} isOn-{{snapper.isOn}}" ng-repeat="snapper in snapperList">
-  <div class="snapperSwitch"></div>
+  <div class="snapperSwitch" ng-class="{animateSwitch: shouldAnimateSwitch($index)}"></div>
   <span class="bolt2"></span>
   <span class="bolt1"></span>
   <span class="bolt2"></span>

@@ -246,12 +246,18 @@ div.container {
     .snapperSwitch {
       transform: rotate(60deg);
     }
+    .animateSwitch {
+      animation: switchOn .5s linear;
+    }
   }
 
   .isOn-false {
     border-top: 4px solid red;
     .snapperSwitch {
       transform: rotate(-60deg);
+    }
+    .animateSwitch {
+      animation: switchOff .5s linear;
     }
   }
 
@@ -263,7 +269,6 @@ div.container {
     right: 52%;
     bottom: 100%;
     left: 48%;
-    transition: transform 2s;
     transform-origin: center bottom;
   }
 }

@@ -22,11 +22,18 @@ angular.module('gcjvisApp')
         };
 
         $scope.snapperList = createDefaultSnappers($scope.snappers);
+        $scope.prevSnapperList = $scope.snapperList;
         $scope.lightOn = getLightStatus($scope.snapperList);
+
+        $scope.shouldAnimateSwitch = function (switchIndex) {
+          return $scope.snapperList[switchIndex].isOn !==
+                 $scope.prevSnapperList[switchIndex].isOn;
+        };
 
         $scope.$watch('snappers', function (newVal, oldVal) {
           console.log("New snappers", newVal);
           $scope.snapperList = createDefaultSnappers(newVal);
+          $scope.prevSnapperList = $scope.snapperList;
           $scope.lightOn = getLightStatus($scope.snapperList);
         });
 
@@ -48,6 +55,7 @@ angular.module('gcjvisApp')
               newList = newList.reduce(applySnap, []);
             }
 
+            $scope.prevSnapperList = $scope.snapperList;
             $scope.snapperList = newList;
             $scope.lightOn = getLightStatus($scope.snapperList);
           }
