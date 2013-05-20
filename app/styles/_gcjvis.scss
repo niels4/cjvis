@@ -235,6 +235,7 @@ div.container {
 
   .isPowered-true {
     background-color: #FFFF00;
+    box-shadow: 0 0 15px #FFC140;
   }
 
   .isPowered-false {
@@ -246,7 +247,7 @@ div.container {
     .snapperSwitch {
       transform: rotate(60deg);
     }
-    .animateSwitch {
+    .snapperSwitch.animateSwitch {
       animation: switchOn .5s linear;
     }
   }
@@ -256,7 +257,7 @@ div.container {
     .snapperSwitch {
       transform: rotate(-60deg);
     }
-    .animateSwitch {
+    .snapperSwitch.animateSwitch {
       animation: switchOff .5s linear;
     }
   }
@@ -270,6 +271,71 @@ div.container {
     bottom: 100%;
     left: 48%;
     transform-origin: center bottom;
+  }
+
+  span.offLabel-false {
+    color: red;
+    position: absolute;
+    top: -2.5ex;
+    right: 0;
+    opacity: 1;
+  }
+
+  span.offLabel-true {
+    color: red;
+    position: absolute;
+    top: -2.5ex;
+    right: 0;
+    opacity: 0;
+  }
+
+  span.onLabel-false {
+    color: green;
+    position: absolute;
+    top: -2.5ex;
+    left: 0;
+    opacity: 0;
+  }
+
+  span.onLabel-true {
+    color: green;
+    position: absolute;
+    top: -2.5ex;
+    left: 0;
+    opacity: 1;
+  }
+
+    span.offLabel-false.animateSwitch {
+      animation: fadeIn .5s ease-in;
+    }
+    span.offLabel-true.animateSwitch {
+      animation: fadeOut .5s ease-out;
+    }
+    span.onLabel-false.animateSwitch {
+      animation: fadeOut .5s ease-out;
+    }
+    span.onLabel-true.animateSwitch {
+      animation: fadeIn .5s ease-in;
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
   }
 }
 
