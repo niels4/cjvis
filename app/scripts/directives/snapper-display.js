@@ -59,9 +59,6 @@ angular.module('gcjvisApp')
           $scope.snapperList[$scope.snapperList.length - 1].isOn = !$scope.snapperList[$scope.snapperList.length - 1].isOn;
           $scope.lightOn = getLightStatus($scope.snapperList);
         };
-      }],
-      link: function postLink(scope, element, attrs) {
-        //element.text('this is the snapperDisplay directive');
-      }
+      }]
     };
   }]);
