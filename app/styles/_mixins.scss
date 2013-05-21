@@ -1,0 +1,63 @@
+@mixin keyframe ($animation) {
+  @-webkit-keyframes $animation {
+    @content;
+  }
+
+  @-moz-keyframes $animation {
+    @content;
+  }
+
+  @-o-keyframes $animation {
+    @content;
+  }
+
+  @keyframes $animation {
+    @content;
+  }
+}
+
+@mixin animation ($animation, $duration, $timingFunc, $delay) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $timingFunc;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $timingFunc;
+  -moz-animation-fill-mode: forwards;
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-timing-function: $timingFunc;
+  -o-animation-fill-mode: forwards;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $timingFunc;
+  animation-fill-mode: forwards;
+}
+
+@mixin rotate ($amount) {
+  -webkit-transform: rotate($amount);
+
+  -moz-transform: rotate($amount);
+
+  -o-transform: rotate($amount);
+
+  transform: rotate($amount);
+}
+
+@mixin transform-origin ($xpos, $ypos) {
+  -webkit-transform-origin: $xpos $ypos;
+
+  -moz-transform-origin: $xpos $ypos;
+
+  -o-transform-origin: $xpos $ypos;
+
+  transform-origin: $xpos $ypos;
+}

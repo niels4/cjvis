@@ -1,0 +1,187 @@
+@import 'mixins';
+
+$borderColor: #C3D9FF;
+
+.gcjvis {
+  .snapperDisplay {
+    border: .5em solid $borderColor;
+    position: absolute;
+    top: 3ex;
+    right: 0;
+    bottom: 3.9ex;
+    left: 2.5em;
+    overflow: scroll;
+    height: auto;
+    span {
+      margin: 3px;
+      margin-top: 4ex;
+      display: block;
+      float: left;
+      width: 6em;
+      height: 6ex;
+    }
+  }
+
+  .snapper-plug {
+    border: 1px solid brown;
+    background: url('../images/plug2.png') no-repeat;
+    background-size: 100% 100%;
+  }
+  
+
+  .snapper-light-false {
+    background: url('../images/light-off.png') no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .snapper-light-true {
+    background: url('../images/light-on.png') no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .snapper {
+    border: 3px solid black;
+    position: relative;
+    span {
+      padding: 0;
+      margin: 0;
+      width:33%;
+      background-size: 60% 80%;
+      position: relative;
+      bottom: .25ex;
+    }
+  }
+
+  .bolt1 {
+    background: url('../images/bolt1.png') center center no-repeat;
+  }
+  
+  .bolt2 {
+    background: url('../images/bolt2.png') center center no-repeat;
+  }
+
+  .isPowered-true {
+    background-color: #FFFF00;
+    box-shadow: 0 0 15px #FFC140;
+  }
+
+  .isPowered-false {
+    background-color: #453823;
+  }
+
+  .isOn-true {
+    border-top: 4px solid green;
+    .snapperSwitch {
+      @include rotate(60deg);
+    }
+    .snapperSwitch.animateSwitch {
+      @include animation(switchOn, .5s, linear, 0);
+    }
+  }
+
+  .isOn-false {
+    border-top: 4px solid red;
+    .snapperSwitch {
+      @include rotate(-60deg);
+    }
+    .snapperSwitch.animateSwitch {
+      @include animation(switchOff, .5s, linear, 0);
+    }
+  }
+
+  .snapperSwitch {
+    background-color: black;
+    border: 2px solid black;
+    position: absolute;
+    top: -6ex;
+    right: 52%;
+    bottom: 100%;
+    left: 48%;
+    @include transform-origin(center, bottom);
+  }
+
+  span.offLabel-false {
+    color: red;
+    position: absolute;
+    top: -2.5ex;
+    right: 0;
+    opacity: 1;
+  }
+
+  span.offLabel-true {
+    color: red;
+    position: absolute;
+    top: -2.5ex;
+    right: 0;
+    opacity: 0;
+  }
+
+  span.onLabel-false {
+    color: green;
+    position: absolute;
+    top: -2.5ex;
+    left: 0;
+    opacity: 0;
+  }
+
+  span.onLabel-true {
+    color: green;
+    position: absolute;
+    top: -2.5ex;
+    left: 0;
+    opacity: 1;
+  }
+
+    span.offLabel-false.animateSwitch {
+      @include animation(fadeIn, .5s, ease-in, 0);
+    }
+    span.offLabel-true.animateSwitch {
+      @include animation(fadeOut, .5s, ease-out, 0);
+    }
+    span.onLabel-false.animateSwitch {
+      @include animation(fadeOut, .5s, ease-out, 0);
+    }
+    span.onLabel-true.animateSwitch {
+      @include animation(fadeIn, .5s, ease-in, 0);
+    }
+}
+
+@include keyframe(fadeIn) {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframe(fadeOut) {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
+
+@include keyframe(switchOn) {
+  from {
+    @include rotate(-60deg);
+  }
+  
+  to {
+    @include rotate(60deg);
+  }
+}
+
+@include keyframe(switchOff) {
+  from {
+    @include rotate(60deg);
+  }
+  
+  to {
+    @include rotate(-60deg);
+  }
+}
