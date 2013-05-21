@@ -4,6 +4,7 @@ $borderColor: #C3D9FF;
 
 .gcjvis {
   .snapperDisplay {
+    @include rotate(0deg);
     border: .5em solid $borderColor;
     position: absolute;
     top: 3ex;
@@ -40,8 +41,10 @@ $borderColor: #C3D9FF;
   }
 
   .snapper {
+    @include rotate(0deg);
     border: 3px solid black;
     position: relative;
+
     span {
       padding: 0;
       margin: 0;
@@ -91,7 +94,7 @@ $borderColor: #C3D9FF;
 
   .snapperSwitch {
     background-color: black;
-    border: 2px solid black;
+    width: 4px;
     position: absolute;
     top: -6ex;
     right: 52%;

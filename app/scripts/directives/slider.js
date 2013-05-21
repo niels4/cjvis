@@ -6,9 +6,12 @@ angular.module('gcjvisApp')
       scope: {
         value: "=",
         max: "=",
+        min: "=",
         label: "@"
       },
-      template: '<span class="sliderLabel">{{label}}</span>' +
+      template: '<input type="range" ng-model="value" min="{{min}}" max="{{max}}" ' +
+                'step="1">' +
+                '<span class="sliderLabel">{{label}}</span>' +
                 '<span class="sliderMin">0</span>' +
                 '<span class="sliderMax">{{max}}</span>',
       link: function (scope, element, attrs) {
@@ -22,39 +25,13 @@ angular.module('gcjvisApp')
           startVal = attrs.min;
         }
 
-        $el.noUiSlider({
-            range: [attrs.min, scope.max],
-            start: startVal,
-            handles: 1,
-            step: 1,
-            orientation: attrs.orientation,
-            slide: function () {
-              scope.$apply(function () {
-                if (attrs.reversed) {
-                  scope.value = reverseAdjustVal - $el.val();
-                } else {
-                  scope.value = $el.val();
-                }
-              });
-            }
-          });
 
         scope.$watch("max", function (newVal, oldVal) {
           scope.value = attrs.min;
-          $el.data('setup').settings.range[1] = newVal;
         });
 
 
         scope.$watch("value", function (newVal, oldVal) {
-          var adjustedNewVal;
-          if (attrs.reversed) {
-            adjustedNewVal = reverseAdjustVal - newVal;
-          } else {
-            adjustedNewVal = Number(newVal);
-          }
-          if (adjustedNewVal !== $el.val()) {
-            $el.val(adjustedNewVal);
-          }
         });
 
       }

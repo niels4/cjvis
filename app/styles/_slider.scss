@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .gcjvis {
 
   .snappersSlider {
@@ -8,6 +10,12 @@
     left: 0;
     height: auto;
     margin-left: 1.5em;
+
+    input {
+      @include appearance(slider-vertical);
+      height: 100%;
+      width: 10px;
+    }
 
     .sliderLabel {
       font-size: 1.2em;
@@ -40,6 +48,10 @@
     bottom: 0;
     left: 3.1em;
     width: auto;
+
+    input {
+      width: 100%;
+    }
 
     .sliderLabel {
       position: absolute;
