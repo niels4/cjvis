@@ -169,7 +169,6 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
             '<%= yeoman.app %>/components/normalize-css/normalize.css',
-            '<%= yeoman.app %>/components/noUiSlider/nouislider.fox.css',
             '.tmp/styles/{,*/}*.css',
             '<%= yeoman.app %>/styles/{,*/}*.css'
           ]

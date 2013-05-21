@@ -42,7 +42,7 @@
   }
 
   .snapsSlider {
-    margin-bottom: 2ex;
+    margin: 0 .5em 2ex .25em;
     position: absolute;
     right: 5em;
     bottom: 0;
@@ -50,6 +50,7 @@
     width: auto;
 
     input {
+      height: 10px;
       width: 100%;
     }
 
