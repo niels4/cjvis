@@ -6,7 +6,6 @@ angular.module('gcjvisApp')
       templateUrl: 'views/snapper-display.html',
       controller: ['$scope', function ($scope) {
         var getLightStatus = function (snapperList) {
-          console.log(snapperList);
           var lastSnapper = snapperList[snapperList.length - 1];
           return lastSnapper.isPowered && lastSnapper.isOn;
         };
@@ -21,17 +20,12 @@ angular.module('gcjvisApp')
           return snapperList;
         };
 
-        $scope.snapperList = createDefaultSnappers($scope.snappers);
-        $scope.prevSnapperList = $scope.snapperList;
-        $scope.lightOn = getLightStatus($scope.snapperList);
-
         $scope.shouldAnimateSwitch = function (switchIndex) {
           return $scope.snapperList[switchIndex].isOn !==
                  $scope.prevSnapperList[switchIndex].isOn;
         };
 
         $scope.$watch('snappers', function (newVal, oldVal) {
-          console.log("New snappers", newVal);
           $scope.snapperList = createDefaultSnappers(newVal);
           $scope.prevSnapperList = $scope.snapperList;
           $scope.lightOn = getLightStatus($scope.snapperList);

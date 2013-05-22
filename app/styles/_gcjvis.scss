@@ -4,6 +4,7 @@
 @import 'snapper-display';
 
 $mainFont: 'Droid_Sans', sans-serif;
+$introTextFont: 'Droid_Ser', sans-serif;
 $mainFontSerif: 'Droid_Ser', serif;
 $titleSubFont: 'Lemon', serif;
 
@@ -83,6 +84,27 @@ div.container {
       overflow: hidden;
       white-space: nowrap;
       @include animation(titleIn, 2.25s, linear, 0);
+    }
+  }
+
+  .introSection {
+    position: relative;
+    border: .5em solid $borderColor;
+    max-width: 960px;
+    margin: 2ex auto;
+    padding: 1ex 1em;
+    text-align: center;
+    a {
+      font-family: $mainFont;
+      font-size: 1.2em;
+    }
+    p {
+      padding: 0;
+      font-family: $introTextFont;
+      text-align: left;
+    }
+    button.skipIntro {
+      float: right;
     }
   }
 
