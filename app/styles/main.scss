@@ -1,3 +1,57 @@
 @CHARSET "UTF-8";
 /* Will be compiled down to a single stylesheet with your sass files */
 @import 'gcjvis';
+
+#forkongithub a {
+  background:purple;
+  color:#C3D9FF;
+  text-decoration:none;
+  font-family:arial, sans-serif;
+  text-align:left;
+  font-weight:bold;
+  padding:5px 40px;
+  font-size:.75rem;
+  line-height:.75rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition:0.5s;
+}
+#forkongithub a:hover{
+  background:#C3D9FF;
+  color:purple;
+}
+#forkongithub a::before,#forkongithub a::after{
+  content:"";
+  width:100%;
+  display:block;
+  position:absolute;
+  top:1px;
+  left:0;
+  height:1px;
+  background:#fff;
+}
+#forkongithub a::after{
+  top:0;
+  right:0;
+}
+@media screen and (min-width:600px){
+  #forkongithub{
+    position:absolute;
+    display:block;
+    top:-20px;
+    right:0;
+    width:125px;
+    overflow:hidden;
+    height:150px;
+  }
+  #forkongithub a{
+    width:200px;
+    position:absolute;
+    top:60px;
+    right:-60px;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+  }
+}
