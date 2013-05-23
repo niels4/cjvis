@@ -14,7 +14,7 @@ Created using the [AngularJS](http://angularjs.org/) and [Yeoman with the Angula
 
 ### Browsers supported:
 
-The CSS and Animations should work on all the latest version of all browsers, however the native range
+The CSS and Animations should work on the latest versions of all browsers, however the native range
 slider input is fairly new and not supported universally accross all browsers. I was using
 a jQuery plugin that worked great accross all desktop browsers, but was very clunky on
 touch screens. The obvious solution would be for the slider directive to use a fallback for
